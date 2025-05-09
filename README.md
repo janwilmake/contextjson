@@ -10,7 +10,7 @@ To start using `context.json`, create a `context.json` file at the root of your 
 
 ```json
 {
-  "$schema": "https://uuithub.com/context.schema.json",
+  "$schema": "https://contextjson.com/context.schema.json",
   "attribution": "Brought to you by Jan Wilmake - https://github.com/janwilmake/contextjson",
   "context": {
     "example": {

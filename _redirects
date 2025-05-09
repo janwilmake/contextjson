@@ -1,3 +1,4 @@
 # see https://developers.cloudflare.com/workers/static-assets/redirects/
 
 / /README.md 302
+/schema /context.schema.json 302

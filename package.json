@@ -1,6 +1,7 @@
 {
   "name": "contextjson",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "bin": "cli.js",
   "repository": "https://github.com/janwilmake/contextjson",
   "scripts": {
     "pub": "git add . && git commit -m 'improvements' && wrangler deploy && npm publish"

@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["attribution"],
+  "description": "context.json can be used to allow people to more easily understand the codebase through uithub and other context exploration interfaces. This schema format is designed to work with the Universal Information Terminal Hub (uithub).",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "default": "https://contextjson.com/context.schema.json"
+    },
+    "extends": {
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        { "type": "array", "items": { "format": "uri", "type": "string" } }
+      ],
+      "description": "URI to base configuration file to inherit from",
+      "default": "https://raw.githubusercontent.com/janwilmake/uit/refs/heads/main/default-faq.json"
+    },
+
+    "apiDependencies": {
+      "description": "API Dependencies are dependencies on external APIs. Useful to keep track for context.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "scopes": { "type": "string" },
+          "operationIds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "rules": {
+      "type": "array",
+      "description": "Array of rule items",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the rule"
+          },
+          "rule": {
+            "type": "string",
+            "description": "The rule content or identifier"
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional description of the rule's purpose"
+          },
+          "alwaysApply": {
+            "type": "boolean",
+            "description": "Whether the rule should always be applied regardless of context"
+          },
+          "globs": {
+            "oneOf": [
+              {
+                "type": "string",
+                "description": "A single glob pattern to which this rule applies"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Multiple glob patterns to which this rule applies"
+              }
+            ],
+            "description": "File patterns to which this rule applies"
+          }
+        },
+        "required": ["name", "rule"],
+        "additionalProperties": false
+      }
+    },
+
+    "context": {
+      "description": "Map of slugs with purpose and filter of context",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["summary"],
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "summary of when to use this context and what the context includes"
+          },
+
+          "prompt": {
+            "type": "string",
+            "description": "An (example) prompt to use with this context",
+            "maxLength": 16000
+          },
+
+          "pluginId": {
+            "type": "string",
+            "description": "Plugin to be applied"
+          },
+
+          "basePath": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "One or more basePaths to filter on"
+          },
+
+          "pathPatterns": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "One or more glob patterns to include filepaths"
+          },
+
+          "excludePathPatterns": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "One or more glob patterns to exclude filepaths"
+          },
+
+          "maxFileSize": {
+            "items": { "type": "number" },
+            "description": "Maximum file size in bytes for files to include."
+          }
+        }
+      }
+    },
+    "attribution": {
+      "type": "string",
+      "description": "Required attribution for Universal Information Terminal",
+      "default": "Brought to you by Jan Wilmake - https://github.com/janwilmake/contextjson"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+# see https://developers.cloudflare.com/workers/static-assets/redirects/
+
+/ /README.md 302

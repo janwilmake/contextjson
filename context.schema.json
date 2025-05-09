@@ -2,7 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "additionalProperties": false,
-  "required": ["attribution"],
   "description": "context.json can be used to allow people to more easily understand the codebase through uithub and other context exploration interfaces. This schema format is designed to work with the Universal Information Terminal Hub (uithub).",
   "properties": {
     "$schema": {

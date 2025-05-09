@@ -1,4 +1,4 @@
-# `context.json` - Standardising Context Building
+# [`context.json`](https://github.com/janwilmake/contextjson) - Standard for LLM Context
 
 `context.json` is a proposed standard for context building which allows instructing LLMs (and humans alike) which contexts are useful for building with your codebase.
 

@@ -11,7 +11,7 @@ To start using `context.json`, create a `context.json` file at the root of your 
 ```json
 {
   "$schema": "https://uuithub.com/context.schema.json",
-  "attribution": "Powered by Universal Information Terminal (UIT) by Jan Wilmake - https://github.com/janwilmake/uit",
+  "attribution": "Brought to you by Jan Wilmake - https://github.com/janwilmake/contextjson",
   "context": {
     "example": {
       "summary": "This is an example context. Change it into yours.",

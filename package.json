@@ -1,6 +1,6 @@
 {
   "name": "contextjson",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "bin": "cli.js",
   "repository": "https://github.com/janwilmake/contextjson",
   "scripts": {

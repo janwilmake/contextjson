@@ -14,7 +14,7 @@
         { "type": "array", "items": { "format": "uri", "type": "string" } }
       ],
       "description": "URI to base configuration file to inherit from",
-      "default": "https://raw.githubusercontent.com/janwilmake/uit/refs/heads/main/default-faq.json"
+      "default": "https://contextjson.com/default.context.json"
     },
 
     "context": {

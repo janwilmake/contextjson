@@ -1,0 +1,14 @@
+{
+  "$schema": "https://contextjson.com/schema",
+  "context": {
+    "eli5": {
+      "summary": "ELI5",
+      "pathPatterns": ["*.md"]
+    },
+    "nutshell": {
+      "summary": "Nutshell summary",
+      "pathPatterns": ["*.md"],
+      "prompt": "Please create a single-paragraph abstract-style summary on what this repo is all about."
+    }
+  }
+}

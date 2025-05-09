@@ -4,6 +4,6 @@
   "bin": "cli.js",
   "repository": "https://github.com/janwilmake/contextjson",
   "scripts": {
-    "pub": "git add . && git commit -m 'improvements' && wrangler deploy && npm publish"
+    "pub": "npm publish && git add . && git commit -m 'improvements' && git push && wrangler deploy"
   }
 }

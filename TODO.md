@@ -6,16 +6,6 @@ Create recommendations for creating the perfect `context.json`
 
 Ensure the uuithub.com ratelimit isn't an issue, but also ensure it doesn't access my private repos!!!
 
-# contextjson/index.html
-
-Focus on the standard.
-
-Tools:
-
-- uithub shows context
-- contextjson/owner/repo
-- cli
-
 # contextjson/owner/repo
 
 - if context.json exists --> show ui for it,

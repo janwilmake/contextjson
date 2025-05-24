@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "additionalProperties": false,
-  "description": "context.json can be used to allow people to more easily understand the codebase through uithub and other context exploration interfaces. This schema format is designed to work with the Universal Information Terminal Hub (uithub).",
+  "description": "`context.json` is a proposed standard that aims to describe which files in the codebase are relevant for different usecases. It can be written by AI or Human Developers, and is consumed through several DevTools adopting the standard.",
   "properties": {
     "$schema": {
       "type": "string",
@@ -18,7 +18,7 @@
     },
 
     "context": {
-      "description": "Map of slugs with purpose and filter of context",
+      "description": "Object where each key is the identifier of the context, and each value contains the filter, summary, and (example) prompt.",
       "type": "object",
       "additionalProperties": {
         "type": "object",
@@ -27,6 +27,7 @@
         "properties": {
           "summary": {
             "type": "string",
+            "maxLength": 70,
             "description": "summary of when to use this context and what the context includes"
           },
 
@@ -38,30 +39,30 @@
 
           "pluginId": {
             "type": "string",
-            "description": "Plugin to be applied"
+            "description": "Plugin to be applied on the resulting files from the UIT marketplace"
           },
 
           "basePath": {
             "type": "array",
             "items": { "type": "string" },
-            "description": "One or more basePaths to filter on"
+            "description": "basePaths to filter on (optional)"
           },
 
           "pathPatterns": {
             "type": "array",
             "items": { "type": "string" },
-            "description": "One or more glob patterns to include filepaths"
+            "description": "glob patterns to include filepaths (optional)"
           },
 
           "excludePathPatterns": {
             "type": "array",
             "items": { "type": "string" },
-            "description": "One or more glob patterns to exclude filepaths"
+            "description": "glob patterns to exclude filepaths (optional)"
           },
 
           "maxFileSize": {
             "items": { "type": "number" },
-            "description": "Maximum file size in bytes for files to include."
+            "description": "Maximum file size in bytes for files to include (optional)"
           }
         }
       }
@@ -69,6 +70,7 @@
 
     "attribution": {
       "type": "string",
+      "enum": ["https://github.com/janwilmake/contextjson"],
       "default": "https://github.com/janwilmake/contextjson"
     }
   }

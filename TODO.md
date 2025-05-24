@@ -2,11 +2,6 @@
 
 Ensure the uuithub.com ratelimit isn't an issue, but also ensure it doesn't access my private repos!!!
 
-# contextjson/owner/repo
-
-- if context.json exists --> show ui for it
-- if not --> go to lmpify to prompt generating one for your repo but ensure all recommendations are in there
-
 # contextjson/cli
 
 cli & watcher to generate `.context` folder and token statistics based on `context.json` (and show that table in terminal)

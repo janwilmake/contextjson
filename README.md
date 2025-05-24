@@ -27,14 +27,6 @@ To start using `context.json`, create a `context.json` file at the root of your 
 
 View the Schema at https://contextjson.com/schema
 
-Some examples of good context.json's: 
-
-- https://raw.githubusercontent.com/janwilmake/dorm/refs/heads/main/context.json
-- https://raw.githubusercontent.com/eastlondoner/cursor-tools/refs/heads/main/context.json
-- https://raw.githubusercontent.com/janwilmake/stripeflare/refs/heads/main/context.json
-
-When creating a `context.json` it's very important to test whether or not the context actually includes all needed information for the described purpose and isn't missing anything. It should also not include anything that wouldn't be useful. Summaries should be succinct and to the point. A well-defined `context.json` creates contexts that allow LLMs to fulfil tasks far more efficiently than they otherwise would, saving costly time and tokens in exploring the codebase.
-
 ### Create a context for another package/repo:
 
 If you want to create a context for another package that you use as a dependency, you can do this by deploying a package to npm with the `-context` suffix, i.e. `[packagename]-context` or `@yourusername/[packagename]-context`. This allows easy programmatic exploration of context.

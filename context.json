@@ -1,0 +1,10 @@
+{
+    "$schema": "https://contextjson.com/schema",
+    "context": { 
+        "new": {
+            "summary": "Create a new context.json for your repo",
+            "pathPatterns": ["context.schema.json","README.md"],
+            "prompt": "Please create a context.json for the following repo: https://uithub.com/{{owner}}/{{repo}}\n\nWhen creating a `context.json` it's very important to test whether or not the context actually includes all needed information for the described purpose and isn't missing anything. It should also not include anything that wouldn't be useful. Summaries should be succinct and to the point. A well-defined `context.json` creates contexts that allow LLMs to fulfil tasks far more efficiently than they otherwise would, saving costly time and tokens in exploring the codebase.\n\nSome examples of good context.json's: \n\n- https://raw.githubusercontent.com/janwilmake/dorm/refs/heads/main/context.json\n\n- https://raw.githubusercontent.com/eastlondoner/cursor-tools/refs/heads/main/context.json\n\n- https://raw.githubusercontent.com/janwilmake/stripeflare/refs/heads/main/context.json"
+        }
+    }
+}

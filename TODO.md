@@ -1,14 +1,20 @@
+# bugs
+
+Fix bugs on mdapply
+
+Fix bugs on response with ``` in code etc. this is very important.
+
 # Ratelimit
 
-Ensure the uuithub.com ratelimit isn't an issue, but also ensure it doesn't access my private repos!!!
+Ensure the uuithub.com ratelimit isn't an issue when using it from lmpify
+
+Quickfix: remove ratelimit
+
+Long-term fix: Create ability for api key with secondary key for authorization to GitHub
 
 # contextjson/cli
 
 cli & watcher to generate `.context` folder and token statistics based on `context.json` (and show that table in terminal)
-
-# Recheck flow once more
-
-Ensure its clear and perfect. if I have more time, optimise more
 
 # launch
 
@@ -17,12 +23,6 @@ Launch announcement of contextjson with tools
 Cursortools launches their adoption
 
 Retweet their adoption
-
-# bugs
-
-Fix bugs on mdapply
-
-Fix bugs on response with ``` in code etc. this is very important.
 
 # Discuss with stakeholders
 

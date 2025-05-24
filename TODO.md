@@ -46,3 +46,11 @@ Fix bugs on response with ``` in code etc. this is very important.
 # Discuss with stakeholders
 
 Reach out gitingest, repomix, and other familiar repos i know with DM + Issue
+
+#
+
+Demos
+
+- xchat (let's make an x authenticated chatroom, but decentralised)
+- stripeflare p2p
+- lmpify + mdapply flow (with voice)

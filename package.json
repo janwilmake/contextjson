@@ -5,5 +5,5 @@
   "repository": "https://github.com/janwilmake/contextjson",
   "scripts": {
     "pub": "npm publish && git add . && git commit -m 'improvements' && git push && wrangler deploy"
-  },
+  }
 }

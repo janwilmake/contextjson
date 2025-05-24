@@ -2,7 +2,7 @@ name = "contextjson"
 compatibility_date = "2025-05-09"
 dev.port = 3000
 assets.directory = "./"
-main = "contextjson-uithub.ts"
+main = "repopage.ts"
 routes = [
   { pattern = "contextjson.com", custom_domain = true },
   { pattern = "www.contextjson.com", custom_domain = true }

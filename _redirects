@@ -1,4 +1,3 @@
 # see https://developers.cloudflare.com/workers/static-assets/redirects/
 
-/ https://github.com/janwilmake/contextjson 302
 /schema /context.schema.json 302

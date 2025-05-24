@@ -1,3 +1,7 @@
+/// <reference types="@cloudflare/workers-types" />
+/// <reference lib="es2021" />
+//@ts-check
+
 /**
  * Context.json Explorer Worker
  * Fetches and displays context.json data from GitHub repositories

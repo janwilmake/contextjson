@@ -38,6 +38,64 @@ interface EnrichedContextEntry extends ContextEntry {
   error?: string;
 }
 
+
+
+function generate404Html(owner: string, repo: string, githubUrl: string): string {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context Explorer: ${owner}/${repo}</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .card {
+      border: 1px solid #d1d9e0;
+      border-radius: 6px;
+      padding: 24px;
+      background-color: #f8f9fa;
+      margin-top: 20px;
+      text-align: center;
+    }
+    h1 {
+      border-bottom: 1px solid #eaecef;
+      padding-bottom: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #0969da;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      margin-top: 16px;
+    }
+    .btn:hover {
+      background-color: #0860ca;
+    }
+  </style>
+</head>
+<body>
+  <h1>Context Explorer: ${owner}/${repo}</h1>
+  
+  <div class="card">
+    <h2>This repository doesn't have a context.json file yet</h2>
+    <p>Add a context.json file to your repository to help LLMs and humans understand your codebase better.</p>
+    <p>The file should be placed at: <code>${githubUrl}</code></p>
+    <a href="https://github.com/janwilmake/contextjson" class="btn">Visit the README to learn how to make one</a>
+  </div>
+</body>
+</html>`;
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
@@ -64,11 +122,12 @@ export default {
     }/context.json`;
     const response = await fetch(githubUrl);
 
-    if (!response.ok) {
-      return new Response(`Context file not found at ${githubUrl}`, {
-        status: 404,
-      });
-    }
+if (!response.ok) {
+  return new Response(generate404Html(owner, repo, githubUrl), {
+    status: 404,
+    headers: { "Content-Type": "text/html" },
+  });
+}
 
     let contextJson: ContextJson;
     let parseWarning = "";
